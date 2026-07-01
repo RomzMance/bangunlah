@@ -1,0 +1,386 @@
+﻿{
+    "pelajar_minggu_1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "day": "MINGGU",
+        "time": "10:00",
+        "bg": "assets/images/bg-kamar-pagi.jpg",
+        "charLeft": "assets/images/char-player-flat.png",
+        "text": "Ahhh... nikmatnya hari Minggu. Gak ada kerjaan. Rebahan terus sampai siang kayaknya enak nih.",
+        "next": "pelajar_minggu_player_2"
+    },
+
+    "pelajar_minggu_player_2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "10:00",
+        "text": "(Tapi kasur rasanya sepi banget kalau gak pegang apa-apa. Ambil HP bentar ah, liat story orang-orang semalem.)",
+        "textClass": "dialog-thought",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_minggu_nar_2"
+    },
+
+    "pelajar_minggu_nar_2": {
+        "speakerType": "",
+        "time": "10:00",
+        "text": "Kamu memiliki waktu kosong seharian di hari minggu ini.",
+        "next": "pelajar_minggu_nar_3"
+    },
+
+    "pelajar_minggu_nar_3": {
+        "speakerType": "",
+        "time": "10:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Lanjut rebahan sambil buka media sosial.", 
+            "addStress": 20, 
+            "addFocus": -10,
+            "nextNode": "pelajar_minggu_nar_3A" },
+            { "text": "Paksa diri bangun, beresin kamar, atau cari aktivitas produktif/hobi offline.", 
+            "addStress": -15, 
+            "addFocus": 20,
+            "maxStress": 80,
+            "nextNode": "pelajar_minggu_nar_3B" }
+        ]
+    },
+    "pelajar_minggu_nar_3A": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Kamu terus menerus menonton konten hiburan beserta berita-berita negatif yang banyak di post di media sosial. Kepalamu perlahan terasa pusing.",
+        "next": "pelajar_minggu_player_3A1"
+    },
+    "pelajar_minggu_player_3A1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "(Kok gini banget ya buka sosmed niat dapet hiburan malah dapet ga enaknya. Makin pusing juga lama-lama...)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_minggu_player_3A2"
+    },
+    "pelajar_minggu_player_3A2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "(Sebenernya gue ngapain ya? Tiap hari scrolling entah apa yang dicari...)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_minggu_nar_3A3"
+    },
+    "pelajar_minggu_nar_3A3": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Kamu mulai merasa lelah.",
+        "next": "pelajar_minggu_nar_3A4"
+    },
+    "pelajar_minggu_nar_3A4": {
+        "speakerType": "",
+        "time": "12:00",
+        "questionText": "Menurutmu, kenapa kamu bermain media sosial selama ini?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Mencari hiburan?", 
+            "addStress": 5, 
+            "nextNode": "pelajar_minggu_player_3A41" },
+            { "text": "Mengisi waktu kosong?", 
+            "addStress": 5, 
+            "nextNode": "pelajar_minggu_player_3A42" }
+        ]
+    },
+    "pelajar_minggu_player_3A41": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "(Nyari hiburan sih, tapi kok ga berasa fresh atau happy nya ya... sekalinya ada pun cuma sementara, malahan habis itu lebih capek.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_minggu_nar_4"
+    },
+    "pelajar_minggu_player_3A42": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "(Ngisi waktu... Tapi pas waktu ga kosong pun gue tetep buka sosmed dan lanjut scrolling.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_minggu_nar_4"
+    },
+    
+
+    "pelajar_minggu_nar_3B": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Kamu beranjak dari kasur dan melawan niatmu untuk membuka media sosial.",
+        "addFocus": 10,
+        "next": "pelajar_minggu_player_3B1"
+    },
+    "pelajar_minggu_player_3B1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "(Nggak, kalau gue pegang HP sekarang, pasti bablas sampai sore. Mending gue beresin kamar deh.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_minggu_nar_3B2"
+    },
+    "pelajar_minggu_nar_3B2": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Kamu menaruh HP di meja, menyalakan musik lewat speaker, dan mulai bergerak. Kamu merapikan kamar, mandi, lalu menghabiskan waktu dengan membaca buku dan melakukan hobimu yang sempat tertunda.",
+        "next": "pelajar_minggu_nar_3B3"
+    },
+    "pelajar_minggu_nar_3B3": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Kamu merasa jauh lebih baik.",
+        "addFocus": 5,
+        "next": "pelajar_minggu_nar_3B4"
+    },
+    "pelajar_minggu_nar_3B4": {
+        "speakerType": "",
+        "time": "12:00",
+        "text": "Lagi-lagi, kamu mengambil HP-mu tanpa sadar.",
+        "addStress": 5,
+        "next": "pelajar_minggu_nar_4"
+    },
+
+    "pelajar_minggu_nar_4": {
+        "speakerType": "",
+        "time": "12:00",
+        "questionText": "Apakah kamu sadar tentang kebiasaan dan adiksimu terhadap media sosial?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Ya...", 
+            "nextNode": "pelajar_minggu_player_5" },
+            { "text": "Tidak kecanduan sih...", 
+            "nextNode": "pelajar_minggu_player_5" }
+        ]
+    },
+
+    "pelajar_minggu_player_5": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": "...",
+        "next": "pelajar_minggu_player_6"
+    },
+    "pelajar_minggu_player_6": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "12:00",
+        "text": ".....",
+        "next": "pelajar_minggu_nar_7"
+    },
+
+    "pelajar_minggu_nar_7": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Hari sudah semakin malam. Kamu masih memiliki aktivitas di hari esok.",
+        "next": "pelajar_minggu_nar_8"
+    },
+    "pelajar_minggu_nar_8": {
+        "speakerType": "",
+        "time": "22:00",
+        "bg": "assets/images/bg-kamar-malem.jpg",
+        "questionText": "Untuk terakhir kalinya, apa yang ingin kamu lakukan?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Scroll sedikit lagi.", 
+            "addStress": 10,
+            "addFocus": -40,
+            "nextNode": "pelajar_minggu_nar_9" },
+            { "text": "Bangunkan dirimu.", 
+            "addStress": -25,
+            "nextNode": "pelajar_minggu_nar_9" }
+        ]
+    },
+    "pelajar_minggu_nar_9": {
+        "speakerType": "",
+        "time": "22:00",
+        "text": "...",
+        "next": "pelajar_minggu_nar_10"
+    },
+    "pelajar_minggu_nar_10": {
+        "speakerType": "",
+        "time": "22:00",
+        "text": "Menurutmu, apa dampak dari kecanduan media sosial yang terjadi padamu?",
+        "next": "pelajar_minggu_player_10"
+    },
+    "pelajar_minggu_player_10": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "22:00",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Aku merasa selalu lelah tanpa sebab.", 
+            "nextNode": "pelajar_minggu_nar_11" },
+            { "text": "Aku merasa pikiranku kacau dan tidak bisa fokus.", 
+            "nextNode": "pelajar_minggu_nar_11" },
+            { "text": "Aku sering lupa waktu dan melupakan hal-hal penting.", 
+            "nextNode": "pelajar_minggu_nar_11" },
+            { "text": "Aku menjauhi interaksi dengan orang lain.", 
+            "nextNode": "pelajar_minggu_nar_11" }
+        ]
+    },
+    "pelajar_minggu_nar_11": {
+        "speakerType": "",
+        "time": "22:10",
+        "text": "...",
+        "next": "pelajar_minggu_player_11"
+    },
+    "pelajar_minggu_player_11": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "22:20",
+        "text": "...",
+        "next": "pelajar_minggu_player_12"
+    },
+    "pelajar_minggu_player_12": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "22:30",
+        "text": "Kenapa setiap aku melakukan hal tersebut selalu muncul perasaan tidak enak?",
+        "next": "pelajar_minggu_player_13"
+    },
+    "pelajar_minggu_player_13": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "22:40",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Apakah aku benar mencari hiburan semata? atau mencari pelarian dari kenyataan?", 
+            "nextNode": "pelajar_minggu_nar_13" },
+            { "text": "Apakah untuk mengisi waktu kosong? yang akhirnya berakhir menjadi penyesalan dan menyalahkan diri sendiri?", 
+            "nextNode": "pelajar_minggu_nar_13" }
+        ]
+    },
+    "pelajar_minggu_nar_13": {
+        "speakerType": "",
+        "time": "22:50",
+        "text": "...",
+        "next": "pelajar_minggu_nar_14"
+    },
+    "pelajar_minggu_nar_14": {
+        "speakerType": "",
+        "time": "22:50",
+        "text": "Kamu akhirnya perlahan sadar akan hal itu.",
+        "next": "pelajar_minggu_player_14"
+    },
+    "pelajar_minggu_player_14": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "22:50",
+        "text": "Apa yang aku sadari?",
+        "next": "pelajar_minggu_player_15"
+    },
+    "pelajar_minggu_player_15": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "23:00",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Bahwa aku selama ini menghabiskan waktu di media sosial tanpa tujuan.", 
+            "nextNode": "pelajar_minggu_nar_15" }
+        ]
+    },
+    "pelajar_minggu_nar_15": {
+        "speakerType": "",
+        "time": "23:00",
+        "text": "Kamu sudah tau dari lama.",
+        "next": "pelajar_minggu_nar_16"
+    },
+    "pelajar_minggu_nar_16": {
+        "speakerType": "",
+        "time": "23:00",
+        "text": "Stress yang kamu dapatkan dari sosial media lebih besar dari yang kamu kira.",
+        "next": "pelajar_minggu_nar_17"
+    },
+    "pelajar_minggu_nar_17": {
+        "speakerType": "",
+        "time": "23:00",
+        "text": "Kamu jelas tau apa yang kamu lakukan.",
+        "next": "pelajar_minggu_nar_18"
+    },
+    "pelajar_minggu_nar_18": {
+        "speakerType": "",
+        "time": "23:00",
+        "text": "Tapi, apakah kamu cukup sadar untuk mau berubah?",
+        "next": "pelajar_minggu_player_18"
+    },
+    "pelajar_minggu_player_18": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "23:10",
+        "text": "...",
+        "next": "pelajar_minggu_player_19"
+    },
+    "pelajar_minggu_player_19": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "23:30",
+        "questionText": "Apakah aku mau untuk berubah?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Aku ingin mengambil kembali kontrol waktuku.", 
+            "nextNode": "pelajar_minggu_nar_19" },
+            { "text": "Aku ingin lepas dari penyesalan yang tidak ada hentinya.", 
+            "nextNode": "pelajar_minggu_nar_19" },
+            { "text": "Aku hanya ingin mengisi waktu kosong…", 
+            "nextNode": "pelajar_minggu_nar_19" }
+        ]
+    },
+    "pelajar_minggu_nar_19": {
+        "speakerType": "",
+        "time": "23:00",
+        "text": "...",
+        "next": "pelajar_minggu_nar_20"
+    },
+    "pelajar_minggu_nar_20": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Semua keputusan ada di tanganmu, dan jalan yang kamu pilih akan menentukan akhir dari cerita ini.",
+        "next": "pelajar_minggu_nar_21"
+    },
+    "pelajar_minggu_nar_21": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Kamu menutup matamu matamu.",
+        "checkStress": {
+            "threshold": 70, 
+            "highNode": "pelajar_ending_bad",
+            "lowNode": "pelajar_ending_good"
+        }
+    },
+
+
+    
+
+    "pelajar_ending_bad": {
+        "triggerEnding": "BAD ENDING<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Terjebak dalam Ilusi Layar</span>"
+    },
+
+    "pelajar_ending_good": {
+        "triggerEnding": "GOOD ENDING<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Terbangun dari Mimpi Panjang</span>"    
+    }
+
+
+}

@@ -1,0 +1,334 @@
+﻿{
+    "pelajar_jumat_nar_4": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "day": "JUMAT",
+        "time": "05:00",
+        "text": "Alarm berbunyi dengan keras, kamu terbangun dengan kepala yang terasa berat dan mata yang terasa perih.",
+        "next": "pelajar_jumat_player_4"
+    },
+    "pelajar_jumat_player_4": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "05:00",
+        "text": "Aduh... kepala berat banget rasanya. Gara-gara begadang semalem nih.",
+        "bg": "assets/images/bg-kamar-malam.jpg",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_jumat_player_4A"
+    },
+    "pelajar_jumat_player_4A": {
+        "speakerType": "left",
+        "time": "05:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "(Snooze Alarm, lanjut tidur.)", 
+                "addStress": 10, 
+                "addFocus": 5,    
+                "nextNode": "pelajar_jumat_nar_4A1" }
+        ]
+    },
+    "pelajar_jumat_nar_4A1": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "text": ".....",
+        "next": "pelajar_jumat_nar_4A2"
+    },
+    "pelajar_jumat_nar_4A2": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": "assets/images/bg-kamar-pagi.jpg",
+        "time": "06:30",
+        "text": "Alarm kembali berbunyi. Kamu membuka matamu dengan berat.",
+        "next": "pelajar_jumat_player_4A3"
+    },
+    "pelajar_jumat_player_4A3": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "06:30",
+        "text": "Duh... ngantuk banget, jam berapa sih sekarang?",
+        "bg": "assets/images/bg-kamar-pagi.jpg",
+        "next": "pelajar_jumat_player_4A4"
+    },
+    "pelajar_jumat_player_4A4": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "06:30",
+        "text": "Oh...masih ada 30 menit sebelum jam 7.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_jumat_nar_4A5"
+    },
+    "pelajar_jumat_nar_4A5": {
+        "speakerType": "",
+        "time": "06:30",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "(Ambil HP.)", 
+            "addStress": 15, 
+            "addFocus": -10,
+            "nextNode": "pelajar_jumat_nar_4A51" },
+            { "text": "(Langsung bersiap.)", 
+            "addStress": -10, 
+            "addFocus": 15,
+            "nextNode": "pelajar_jumat_nar_4A52" }
+        ]
+    },
+    "pelajar_jumat_nar_4A51": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "06:30",
+        "text": "Kamu mengambil HP-mu untuk membuka media sosial.",
+        "next": "pelajar_jumat_nar_4A511"
+    },
+    "pelajar_jumat_nar_4A52": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "06:30",
+        "text": "Kamu langsung bersiap untuk berangkat.",
+        "next": "pelajar_jumat_nar_4A521"
+    },
+    "pelajar_jumat_nar_4A511": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "text": ".....",
+        "next": "pelajar_jumat_nar_4A512"
+    },
+    "pelajar_jumat_nar_4A512": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "time": "07:00",
+        "text": "30 menit sudah berlalu.",
+        "next": "pelajar_jumat_player_4A513"
+    },
+    "pelajar_jumat_player_4A513": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "07:00",
+        "text": "ALAMAK! UDAH JAM SEGINI TERNYATA!! DUH TELAT!!",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_jumat_nar_4A514"
+    },
+    "pelajar_jumat_nar_4A514": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "07:20",
+        "text": "Kamu tidak memiliki waktu untuk bersiap dan memutuskan untuk berangkat dengan tergesa-gesa.",
+        "next": "pelajar_jumat_nar_4A6"
+    },
+    "pelajar_jumat_nar_4A521": {
+        "speakerType": "",
+        "time": "06:50",
+        "text": "Kamu akhirnya selesai bersiap dan memiliki sisa waktu untuk berangkat meski tergesa-gesa.",
+        "next": "pelajar_jumat_nar_4A6"
+    },
+    "pelajar_jumat_nar_4A6": {
+        "speakerType": "",
+        "bg": "assets/images/bg-sekolah-kelas.jpg",
+        "text": ".....",
+        "next": "pelajar_jumat_npc_4A7"
+    },
+    "pelajar_jumat_npc_4A7": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "07:30",
+        "text": "Buset dah, kemana aja lo? Semalem begadang ya lo?",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_jumat_player_4A8"
+    },
+    "pelajar_jumat_player_4A8": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "07:30",
+        "text": "Iya nih bablas gue lagi main HP ga liat jam. Hadeh… untung Bu Dadang juga telat.",
+        "next": "pelajar_jumat_npc_4A9"
+    },
+    "pelajar_jumat_npc_4A9": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "charRight": "assets/images/char/udin-happy.png",
+        "time": "07:30",
+        "text": "Waduh gimana sih lo [PLAYER], HP TEROSSSSS!",
+        "next": "pelajar_jumat_player_4A10"
+    },
+    "pelajar_jumat_player_4A10": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "07:30",
+        "text": "Yaelah, kok lo jadi ikut-ikutan Emak lo. Duh mana tugas hari ini belum ngerjain gue.",
+        "next": "pelajar_jumat_npc_4A11"
+    },
+    "pelajar_jumat_npc_4A11": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "07:30",
+        "text": "Nah Loh, Hehehe… habisnya di pikir-pikir kayaknya bener. Lo juga ngerasain kan efek scrolling itu, kayak ga berasa aja jalannya waktu.",
+        "charLeft": "",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_jumat_npc_4A12"
+    },
+    "pelajar_jumat_npc_4A12": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "charRight": "assets/images/char/udin-happy.png",
+        "time": "07:30",
+        "text": "Eh udah dateng tuh, lanjut nanti aja.",
+        "next": "pelajar_jumat_nar_5"
+    },
+    "pelajar_jumat_nar_5": {
+        "speakerType": "",
+        "text": "Kelas tetap terlaksana sampai dengan kelas terakhir..",
+        "next": "pelajar_jumat_npc_5"
+    },
+    "pelajar_jumat_npc_5": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Gitu ya temen-temen, makanya penggunaan media sosial itu harus dibatasi, karena jika tidak, bisa menimbulkan fenomena brain fog. Ada yang pernah denger istilah tersebut?",
+        "next": "pelajar_jumat_npc_5A"
+    },
+    "pelajar_jumat_npc_5A": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "[PLAYER], menurut kamu brain fog itu artinya apa?",
+        "next": "pelajar_jumat_player_5A"
+    },
+    "pelajar_jumat_player_5A": {
+        "speakerType": "",
+        "questionText": "",
+        "time": "15:00",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Pikiran yang hilang fokus.", 
+            "addStress": -10, 
+            "addFocus": 20,
+            "maxStress": 60,
+            "nextNode": "pelajar_jumat_npc_5A1" },
+            { "text": "Otaknya ngebul Pak.", 
+            "addStress": 15, 
+            "addFocus": 0,
+            "nextNode": "pelajar_jumat_npc_5A2" }
+        ]
+    },
+    "pelajar_jumat_npc_5A1": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Yap, tepat sekali! 100 Jempol kaki buat kamu! Kalian harus lebih sadar tentang topik ini.",
+        "next": "pelajar_jumat_npc_5A3"
+    },
+    "pelajar_jumat_npc_5A2": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Nguawor, belum tepat! Kedepannya kalian harus lebih sadar tentang topik ini.",
+        "next": "pelajar_jumat_npc_5A3"
+    },
+    "pelajar_jumat_npc_5A3": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Brain Fog atau kabut otak ini adalah sebuah kondisi di mana fungsi berpikir otak kita menurun sementara. Rasanya seperti otak kalian tertutup kabut tebal: jadi susah fokus, gampang lupa, lemot saat diajak mikir, dan rasanya lelah banget meskipun sudah bangun tidur.",
+        "next": "pelajar_jumat_npc_5A4"
+    },
+    "pelajar_jumat_npc_5A4": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Lalu, apa hubungannya dengan kecanduan media sosial? Sangat erat. Saat kalian kecanduan scrolling medsos, terutama sebelum tidur, ada dua hal yang merusak otak kalian secara instan.",
+        "next": "pelajar_jumat_npc_5A5"
+    },
+    "pelajar_jumat_npc_5A5": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Pertama, cahaya biru atau blue light dari layar HP membohongi otak kalian agar mengira hari masih siang, sehingga hormon tidur atau melatonin tidak keluar.",
+        "next": "pelajar_jumat_npc_5A6"
+    },
+    "pelajar_jumat_npc_5A6": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Kedua, setiap kali kalian melihat postingan, video lucu, atau notifikasi baru, otak kalian terus dibanjiri dopamin—hormon kesenangan instan. Ini membuat otak kalian terus terjaga, ketagihan, dan bekerja keras semalaman.",
+        "next": "pelajar_jumat_npc_5A7"
+    },
+    "pelajar_jumat_npc_5A7": {
+        "speakerType": "right",
+        "speakerName": "Pak Diding",
+        "charRight": "assets/images/char/pakdiding.png",
+        "time": "15:00",
+        "text": "Akibat kecanduan itu, otak tidak sempat beristirahat dan memulihkan diri...",
+        "next": "pelajar_jumat_nar_6"
+    },
+    "pelajar_jumat_nar_6": {
+        "speakerType": "",
+        "text": ".....",
+        "next": "pelajar_jumat_nar_6A"
+    },
+    "pelajar_jumat_nar_6A": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Akhirnya kelas terakhir hari ini selesai.",
+        "next": "pelajar_jumat_npc_7"
+    },
+    "pelajar_jumat_npc_7": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "charRight": "assets/images/char/udin-happy.png",
+        "bg": "assets/images/bg-kantin.jpg",
+        "time": "17:00",
+        "text": "Nah kan bener gak sih apa yang gue bilang! Bahaya banget penyakit scrolling sosmed ini! Rasanya kayak emang di buat biar kita lupa sama realita! SCROLLNYA GAK HABIS-HABIS!",
+        "next": "pelajar_jumat_player_7"
+    },
+    "pelajar_jumat_player_7": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "17:00",
+        "text": "Hmmm… bener juga sih, tapi susah banget deh buat gak scrolling tuh…",
+        "next": "pelajar_jumat_npc_8"
+    },
+    "pelajar_jumat_npc_8": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "charRight": "assets/images/char/udin-happy.png",
+        "bg": "assets/images/bg-kantin.jpg",
+        "time": "17:00",
+        "text": "Besok malem jadi kan kita? Gue udah ngajak yang lain juga.",
+        "next": "pelajar_jumat_player_8"
+    },
+    "pelajar_jumat_player_8": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "17:00",
+        "text": "Karaoke kan? Jadi dong, gue udah bosen juga dirumah.",
+        "next": "pelajar_jumat_9t"
+    },
+    "pelajar_jumat_9t": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Kamu akhirnya sampai dirumah. \nDi kamar kamu merasa sangat lelah, \njadi kamu memutuskan untuk langsung beristirahat.",
+        "nextChapter": "sabtu.json",
+        "next": "pelajar_sabtu_nar_1"
+    }
+}

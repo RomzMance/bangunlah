@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangunlah.</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <body>
+    <div id="portrait-warning">
+        <div class="warning-content">
+            <h2>⚠️ Putar Layar HP-mu</h2>
+            <p>Game ini hanya bisa dimainkan dalam posisi mendatar (Landscape).</p>
+        </div>
+    </div>
+    
+    <div id="game-container" class="filter-monochrome">
+        
+        <div id="title-screen" class="screen">
+            <div class="title-content">
+                <h1 class="game-title">Bangunlah.</h1>
+                <p class="game-subtitle">apakah kamu sudah cukup sadar?</p>
+                <div class="menu-buttons">
+                    <button id="start-btn" class="menu-btn">Mulai Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="form-screen" class="screen hide">
+            <div class="form-container">
+                <h2>Profil Pemain</h2>
+                <div class="form-group">
+                    <label for="player-name-input">Masukkan Nama Panggilanmu:</label>
+                    <input type="text" id="player-name-input" placeholder="Nama kamu..." maxlength="12">
+                    
+                    <p id="name-error" class="error-text hide"></p>
+                </div>
+
+                <button id="submit-form-btn" class="menu-btn">Masuk ke Dunia Cerita</button>
+            </div>
+        </div>
+
+        
+
+        <div id="game-screen" class="screen hide">
+            
+            <div id="bg-layer"></div>
+
+            <div id="transition-overlay" class="hide">
+                <p id="transition-text">Tanpa sadar, waktu sudah melebihi pukul 12...</p>
+            </div>
+
+            <div class="top-navbar">
+                <button id="music-toggle-btn" class="ui-btn custom-hud-btn">🔊 BGM ON</button>
+                <button id="restart-btn" class="ui-btn custom-hud-btn hide">Restart</button>
+            </div>
+            
+            <div id="time-widget" class="time-widget">
+                <span id="time-day">JUMAT</span>
+                <span id="time-clock">20:00</span>
+            </div>
+
+            <div id="stress-meter-box" class="meter-item-independent">
+                <span class="m-title">Stress</span>
+                <div class="m-track"><div id="stress-bar" class="m-fill"></div></div>
+            </div>
+
+            <div id="focus-meter-box" class="meter-item-independent">
+                <span class="m-title">Focus</span>
+                <div class="m-track"><div id="focus-bar" class="m-fill"></div></div>
+            </div>
+
+            <div id="character-stage">
+                <div id="thought-bubble-left" class="thought-bubble hide">
+                    <p id="thought-text-left">Lorem ipsum dolor sit amet...</p>
+                </div>
+                
+                <img id="char-left" class="char-sprite invisible" src="" alt="Player">
+                <img id="char-right" class="char-sprite invisible" src="" alt="NPC">
+            </div>
+
+            <div id="choices-wrapper" class="choices-wrapper hide">
+                <div id="question-text" class="question-box">Kamu ingin melakukan apa?</div>
+                <div id="choices-container" class="choices-grid"></div>
+            </div>
+
+            <div class="bottom-ui-zone">
+                <div id="name-box-left" class="name-box pos-left hide">Player</div>
+                <div id="name-box-right" class="name-box pos-right hide">NPC</div>
+                
+                <div id="textbox" class="main-textbox">
+                    <div id="dialog-text" class="typewriter-font">Mulai cerita...</div>
+
+                    <span class="next-arrow hide">▼</span>
+                </div>
+            </div>
+
+        <button id="log-btn" class="ui-btn floating-log-btn custom-hud-btn">Log</button>
+
+            <div id="log-overlay" class="log-overlay hide">
+                <div class="log-window">
+                    <div class="log-header">
+                        <h2>Riwayat Percakapan</h2>
+                        <button id="log-close-btn" class="ui-btn">X</button>
+                    </div>
+                    <div id="log-stream" class="log-stream"></div>
+                </div>
+            </div>
+        </div>
+
+            <audio id="bgm-player" loop></audio>
+            <script src="engine.js"></script>
+</body>
+</html>

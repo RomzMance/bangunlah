@@ -1,0 +1,289 @@
+﻿{
+    "pelajar_kamis_start": {
+        "speakerType": "",
+        "bg": "assets/images/bg-sekolah-kelas.jpg",
+        "bgm": "assets/audio/pufino-loving.mp3",
+        "day": "KAMIS",
+        "time": "10:00",
+        "text": "Kelas pagi baru saja selesai, kamu memiliki waktu luang sebelum kelas berikutnya dimulai.",
+        "next": "pelajar_kamis_npc_1"
+    },
+    "pelajar_kamis_npc_1": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "charRight": "assets/images/char/udin-happy.png",
+        "time": "10:00",
+        "text": "Eh [PLAYER], ke kantin yuk! Kita makan siang sekalian ngomongin plan kita buat hari Sabtu nanti.",
+        "next": "pelajar_kamis_player_1"
+    },
+    "pelajar_kamis_player_1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "10:00",
+        "textClass": "dialog-thought",
+        "text": "(Gue juga lumayan laper sih, tapi kok agak males ya... Disini dulu aja deh, mau istirahat sebentar.)",
+        "next": "pelajar_kamis_player_1A"
+    },
+    "pelajar_kamis_player_1A": {
+        "speakerType": "left",
+        "time": "10:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "charLeft": "assets/images/char-player-flat.png",
+        "uiLayout": "decision",
+        "choices": [
+            { 
+                "text": "Istirahat sebentar di kelas.", 
+                "addStress": 15, 
+                "addFocus": -10,
+                "nextNode": "pelajar_kamis_player_1A1"
+                        },
+            { 
+                "text": "Ikut Udin ke kantin.", 
+                "addStress": -10, 
+                "addFocus": 10,
+                "nextNode": "pelajar_kamis_player_1B1"
+            }
+        ]
+    },
+    "pelajar_kamis_player_1A1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "10:00",
+        "text": "Gue mager banget Din, mendingan disini aja deh.",
+        "next": "pelajar_kamis_npc_1A2"
+        
+    },
+    "pelajar_kamis_player_1B1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "10:00",
+        "text": "Gue agak males sih, tapi boleh deh lapar juga. Yuk!",
+        "next": "pelajar_kamis_npc_1B2"
+    },
+    "pelajar_kamis_npc_1A2": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "10:00",
+        "charRight": "assets/images/char/udin-happy.png",
+        "text": "Yahh dasar pemalas, ya udah deh gue duluan ya!",
+        "next": "pelajar_kamis_nar_1A3"
+    },
+    "pelajar_kamis_npc_1B2": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "10:00",
+        "text": "Nah gitu dong, jangan main HP mulu, nanti mata lo rusak! Ayo cepetan, gue udah laper nih!",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_kamis_nar_1B3"
+    },
+    "pelajar_kamis_nar_1A3": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "10:00",
+        "text": "Kamu memutuskan untuk tetap di kelas dan kamu mulai mengambil HP-mu untuk membuka media sosial. Berharap dapat memberikan hiburan sejenak.",
+        "next": "pelajar_kamis_nar_1A4"
+    },
+    "pelajar_kamis_nar_1B3": {
+        "speakerType": "",
+        "speakerName": "",
+        "text": "Kamu memutuskan untuk ikut Udin ke kantin dan kamu merasa sedikit lebih baik.",
+        "next": "pelajar_kamis_nar_1B4"
+    },
+    "pelajar_kamis_nar_1A4": {
+        "speakerType": "assets/images/bg-sekolah-kelas.jpg",
+        "speakerName": "",
+        "day": "KAMIS",
+        "time": "14:00",
+        "text": "Waktu terasa sangat cepat dan tiba-tiba kelas selanjutnya sudah dimulai. Kamu merasa sedikit lelah.",
+        "next": "pelajar_kamis_1t"
+    },
+    "pelajar_kamis_nar_1B4": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": "assets/images/bg-kantin.jpg",
+        "day": "KAMIS",
+        "time": "14:00",
+        "text": "Kamu menghabiskan waktumu di kantin bersama teman-temanmu. Setelah perbincangan yang menyenangkan, kamu memasuki kelas berikutnya dengan perasaan yang lebih segar.",
+        "next": "pelajar_kamis_1t"
+    },
+    "pelajar_kamis_1t": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "text": "Tidak terasa kelas terakhir hari ini telah selesai. Kamu merasa cukup lelah dan memutuskan untuk segera langsung pulang ke rumah untuk beristirahat.",
+        "next": "pelajar_kamis_npc_2"
+    },
+    "pelajar_kamis_npc_2": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "bg": "assets/images/bg-sekolah-koridor.jpg",
+        "charRight": "assets/images/char/udin-happy.png",
+        "time": "17:00",
+        "text": "Selesai juga akhirnya! Eh [PLAYER], gue akhir-akhir ini ngerasa gampang capek deh, kalo kata Emak gue sih kebanyakan hp. Udah sering banget tuh diterakin 'HP TEROSSSSSSS!!!' sama Emak gue. Gue jadi kepikiran, apa emang bener gara-gara HP ya? Gimana menurut lo [PLAYER]?",
+        "next": "pelajar_kamis_player_2A"
+    },
+    "pelajar_kamis_player_2A": {
+        "speakerType": "left",
+        "day": "KAMIS",
+        "time": "17:00",
+        "questionText": "",
+        "text": "",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Kurang tidur kali lo.", "nextNode": "pelajar_kamis_npc_2A" },
+            { "text": "Perasaan lo aja Din.", "nextNode": "pelajar_kamis_npc_2A" },
+            { "text": "Mungkin ada benernya.", "nextNode": "pelajar_kamis_npc_2A" }
+        ]
+    },
+    "pelajar_kamis_npc_2A": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "bg": "assets/images/bg-sekolah-koridor.jpg",
+        "time": "17:00",
+        "text": "Waduhh, gue jadi kepikiran lagi deh. Gue jadi takut kalo emang bener gara-gara HP. Pengen ngurangin pake HP sih, tapi gue takut ketinggalan info-info penting dari sosmed.",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_kamis_2t"
+    },
+    "pelajar_kamis_2t": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "text": "Setelah berbincang dengan Udin dalam perjalanan pulang, kamu akhirnya sampai di rumah.",
+        "next": "pelajar_kamis_player_3"
+    },
+    "pelajar_kamis_nar_3": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "time": "20:00",
+        "text": "Kamu berada di kamarmu, suasana sunyi dan membosankan. Kamu merasa sangat lelah, tapi anehnya kamu juga merasa gelisah.",
+        "next": "pelajar_kamis_player_3"
+    },
+    "pelajar_kamis_player_3": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "20:00",
+        "text": "(Kok gue capek banget ya rasanya? Pengen rebahan aja jadinya.)",
+        "textClass": "dialog-thought",
+        "bg": "assets/images/bg-kamar-malam.jpg",
+        "charLeft": "assets/images/char-player-flat.png",
+        "charRight": "",
+        "next": "pelajar_kamis_nar_3A"
+    },
+    "pelajar_kamis_nar_3A": {
+        "speakerType": "left",
+        "time": "20:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": "",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "(Langsung tidur.)", "nextNode": "pelajar_kamis_player_3A1", "disabled": true },
+            { 
+                "text": "(Selesaikan tugas dulu.)", 
+                "addStress": -10, 
+                "addFocus": 15,
+                "nextNode": "pelajar_kamis_player_3A1" },
+            { 
+                "text": "(Cek HP sebentar.)", 
+                "addStress": 15, 
+                "addFocus": -10,
+                "nextNode": "pelajar_kamis_nar_3B1" }
+        ]
+    },
+    "pelajar_kamis_player_3A1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "20:00",
+        "text": "(Mending selesain kerjaan dulu deh, nanti kalo udah selesai bisa langsung tidur.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_kamis_nar_3A2"
+    },
+    "pelajar_kamis_nar_3B1": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": "assets/images/bg-kamar-malam-hp.jpg",
+        "time": "20:00",
+        "text": "Kamu membuka HP-mu untuk membuka media sosial. Ada beberapa notifikasi yang bisa di lihat di sana.",
+        "next": "pelajar_kamis_nar_3B2"
+    },
+    "pelajar_kamis_nar_3A2": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "20:00",
+        "text": "Setelah menyelesaikan tugasmu, dengan sisa waktu istirahat, kamu dengan refleks membuka HP-mu untuk membuka media sosial.",
+        "next": "pelajar_kamis_player_3A3"
+    },
+    "pelajar_kamis_nar_3B2": {
+        "speakerType": "left",
+        "time": "20:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": "",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "(Balas pesan masuk.)", 
+                "addStress": 15, 
+                "addFocus": -10,
+                "nextNode": "pelajar_kamis_player_3B21" },
+            { "text": "(Tonton video dari Udin.)", 
+                "addStress": 15, 
+                "addFocus": -10,
+                "nextNode": "pelajar_kamis_player_3B22" },
+            { "text": "(Scrolling sebentar.)", 
+                "addStress": 15, 
+                "addFocus": -10,
+                "nextNode": "pelajar_kamis_nar_3B23" }
+        ]
+    },
+    "pelajar_kamis_player_3B21": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "20:00",
+        "text": "Mengetik 'Gue juga belum nih, besok aja lah dikelas minta si Julie'",
+        "next": "pelajar_kamis_player_3B3"
+    },
+    "pelajar_kamis_player_3B22": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "20:00",
+        "text": "(Buset banyak banget videonya, males ah nontonin semuanya.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_kamis_player_3B3"
+    },
+    "pelajar_kamis_nar_3B23": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "20:00",
+        "text": "Kamu menghabiskan waktu “sebentar” untuk scrolling media sosial.",
+        "next": "pelajar_kamis_player_3B3"
+    },
+    "pelajar_kamis_player_3A3": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "22:30",
+        "text": "(Duh gak bisa tidur, scrolling sosmed bentar deh.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_kamis_3t"
+    },
+    "pelajar_kamis_player_3B3": {
+        "speakerType": "",
+        "speakerName": "",
+        "time": "23:00",
+        "text": "(Lanjut scrolling bentar deh... Wah udah jam segini, bentar lagi deh tunggu genap jam 12:00, baru tidur.)",
+        "textClass": "dialog-thought",
+        "next": "pelajar_kamis_3t"
+    },
+    "pelajar_kamis_3t": {
+        "speakerType": "",
+        "speakerName": "",
+        "bg": " ",
+        "time": "02:30",
+        "text": "Tanpa sadar, waktu sudah melebihi pukul 12:00. \nBeberapa saat kemudian, kamu tertidur.",
+        "nextChapter": "jumat.json",
+        "next": "pelajar_jumat_nar_4"
+    }
+}

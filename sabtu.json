@@ -1,0 +1,385 @@
+﻿{
+    "pelajar_sabtu_nar_1": {
+        "speakerType": "",
+        "bg": " ",
+        "day": "SABTU",
+        "time": "17:00",
+        "text": "Hari dimana kamu membuat janji, Sabtu Sore Hari akhirnya tiba.",
+        "next": "pelajar_sabtu_player_1"
+    },
+    "pelajar_sabtu_player_1": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "17:00",
+        "bg":"assets/images/bg-kamar-pagi.jpg",
+        "text": "(Masih ada satu jam buat santai nih, ngapain ya...)",
+        "textClass": "dialog-thought",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_2"
+    },
+    "pelajar_sabtu_nar_2": {
+        "speakerType": "",
+        "time": "17:00",
+        "text": "Kamu baru saja selesai bersiap-siap. Saat kamu sedang menunggu waktu untuk berangkat, HP-mu bergetar.",
+        "next": "pelajar_sabtu_player_2"
+    },
+    "pelajar_sabtu_player_2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "17:00",
+        "text": "(Ada notifikasi dari siapa tuh?)",
+        "textClass": "dialog-thought",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_player_3"
+    },
+    "pelajar_sabtu_player_3": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "17:00",
+        "text": "(Oh, notif sosmed. Coba liat deh.)",
+        "textClass": "dialog-thought",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_3"
+    },
+    "pelajar_sabtu_nar_3": {
+        "speakerType": "",
+        "time": "17:00",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Cek notifikasi dan scroll sebentar.", 
+            "addStress": 15, 
+            "addFocus": 10,    
+            "nextNode": "pelajar_sabtu_player_3A" },
+            { "text": "Berangkat lebih awal dari sekarang.", 
+            "addStress": -15, 
+            "addFocus": 10,
+            "nextNode": "pelajar_sabtu_player_3B" }
+        ]
+    },
+    "pelajar_sabtu_player_3A": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "17:00",
+        "text": "Scroll bentar ah sambil nunggu, masih ada sejam juga, masih lama hehe.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_3A"
+    },
+    "pelajar_sabtu_player_3B": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "17:00",
+        "text": "Langsung berangkat aja deh biar tenang sampe sana dulu, soalnya lumayan jauh.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_3B"
+    },
+    "pelajar_sabtu_nar_3A": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Lagi-Lagi kamu 'terhipnotis' oleh konten media sosial. Kamu menonton dan terus menonton, scrolling demi scrolling, tanpa sadar akan waktu.",
+        "next": "pelajar_sabtu_nar_3A1"
+    },
+    "pelajar_sabtu_nar_3A1": {
+        "speakerType": "",
+        "bg": " ",
+        "time": "17:30",
+        "text": "Rasa gelisah mulai menghantuimu.",
+        "next": "pelajar_sabtu_nar_3A2"
+    },
+    "pelajar_sabtu_nar_3A2": {
+        "speakerType": "",
+        "bg": " ",
+        "time": "18:20",
+        "text": "50 menit sudah berlalu. Hanya tinggal 10 menit lagi sampai waktu berkumpul.",
+        "next": "pelajar_sabtu_player_3A3"
+    },
+    "pelajar_sabtu_player_3A3": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "bg": "assets/images/bg-kamar-malam.jpg",
+        "time": "18:20",
+        "text": "Duh ga kerasa udah jam segini aja, telat deh ini. Gak apa-apa deh nanti tinggal minta maaf ke yang lain aja.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_4A"
+    },
+    "pelajar_sabtu_nar_3B": {
+        "speakerType": "",
+        "bg": "assets/images/bg-frontkaraoke.jpg",
+        "time": "18:20",
+        "text": "Kamu sampai 10 menit lebih awal dari waktu yang ditentukan.",
+        "next": "pelajar_sabtu_nar_3B1"
+    },
+    "pelajar_sabtu_nar_3B1": {
+        "speakerType": "",
+        "bg": "assets/images/bg-frontkaraoke.jpg",
+        "time": "18:20",
+        "text": "Ketika kamu berjalan ke tempat karaoke, kamu melihat mereka berempat sedang menunggu di lobby.",
+        "next": "pelajar_sabtu_player_3B2"
+    },
+    "pelajar_sabtu_player_3B2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "18:20",
+        "text": "(Wah udah pada sampai aja, untung gue berangkat lebih awal.)",
+        "textClass": "dialog-thought",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_4B"
+    },
+    "pelajar_sabtu_nar_4A": {
+        "speakerType": "",
+        "bg": "assets/images/bg-lobbykaraoke.jpg",
+        "time": "19:00",
+        "text": "Kamu akhirnya tiba di lobby. Wajah Udin, Lutfy, Putri, dan Julie terlihat kecewa melihatmu.",
+        "addStress": 5,
+        "next": "pelajar_sabtu_npc_4A1"
+    },
+    "pelajar_sabtu_nar_4B": {
+        "speakerType": "",
+        "bg": "assets/images/bg-lobbykaraoke.jpg",
+        "time": "18:20",
+        "addFocus": 10,
+        "text": "Kamu akhirnya tiba di lobby. Wajah Udin, Lutfy, Putri, dan Julie terlihat senang melihatmu.",
+        "next": "pelajar_sabtu_npc_4B1"
+    },
+    "pelajar_sabtu_npc_4A1": {
+        "speakerType": "right",
+        "speakerName": "Putri",
+        "bg": "assets/images/bg-lobbykaraoke.jpg",
+        "time": "19:00",
+        "text": "Lo kemana aja? Udah jam segini baru sampai.",
+        "charRight": "assets/images/char/putri-flat.png",
+        "next": "pelajar_sabtu_player_4A2"
+    },
+    "pelajar_sabtu_player_4A2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "19:00",
+        "text": "Sorry guys, gue tadi udah siap tapi ga liat jam setelah itu. Terus tiba-tiba udah lewat aja.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_npc_4A3"
+    },
+    "pelajar_sabtu_npc_4A3": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "19:00",
+        "text": "Yaudah yang penting udah disini semua. Yuk kita langsung masuk aja!",
+        "charRight": "assets/images/char/udin-flat.png",
+        "next": "pelajar_sabtu_npc_4A4"
+    },
+    "pelajar_sabtu_npc_4A4": {
+        "speakerType": "right",
+        "speakerName": "Julie",
+        "time": "19:00",
+        "text": "Yuk!",
+        "charRight": "assets/images/char/julie-flat.png",
+        "next": "pelajar_sabtu_nar_5"
+    },
+    "pelajar_sabtu_npc_4B1": {
+        "speakerType": "right",
+        "speakerName": "Putri",
+        "bg": "assets/images/bg-lobbykaraoke.jpg",
+        "time": "18:20",
+        "text": "Nah itu dia akhirnya dateng.",
+        "charRight": "assets/images/char/putri-happy.png",
+        "next": "pelajar_sabtu_player_4B2"
+    },
+    "pelajar_sabtu_player_4B2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "18:20",
+        "text": "Eh kalian udah pada sampai dari tadi?",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_npc_4B3"
+    },
+    "pelajar_sabtu_npc_4B3": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "18:20",
+        "text": "Engga kok, kita juga baru sampai.",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_sabtu_npc_4B4"
+    },
+    "pelajar_sabtu_npc_4B4": {
+        "speakerType": "right",
+        "speakerName": "Julie",
+        "time": "18:20",
+        "text": "Gimana kalo kita langsung masuk aja? Mumpung udah disini semua.",
+        "charRight": "assets/images/char/julie-happy.png",
+        "next": "pelajar_sabtu_npc_4B5"
+    },
+    "pelajar_sabtu_npc_4B5": {
+        "speakerType": "right",
+        "speakerName": "Lutfy",
+        "time": "18:20",
+        "text": "Yukkk gue udah ga sabar nih!!",
+        "charRight": "assets/images/char/lutfy-happy.png",
+        "next": "pelajar_sabtu_nar_5"
+    },
+    "pelajar_sabtu_nar_5": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Kalian akhirnya masuk ke ruangan karaoke yang sudah disediakan.",
+        "next": "pelajar_sabtu_nar_6"
+    },
+    "pelajar_sabtu_nar_6": {
+        "speakerType": "",
+        "bg": "assets/images/bg-roomkaraoke.jpg",
+        "time": "19:30",
+        "text": "Beberapa saat setelah kamu dan teman-temanmu masuk, HP-mu bergetar kembali. Terlihat beberapa notifikasi dari media sosialmu.",
+        "next": "pelajar_sabtu_nar_7"
+    },
+    "pelajar_sabtu_nar_7": {
+        "speakerType": "",
+        "time": "19:30",
+        "text": "Musik sedang berputar pelan. Julie dan Lutfy sedang asyik bernyanyi, sementara Udin dan Putri sedang mengobrol. ",
+        "next": "pelajar_sabtu_nar_8"
+    },
+    "pelajar_sabtu_nar_8": {
+        "speakerType": "",
+        "time": "19:30",
+        "text": "Seperti kebiasaanmu, kamu mengambil HP-mu dan melihat notifikasi dari media sosialmu.",
+        "next": "pelajar_sabtu_nar_9"
+    },
+    "pelajar_sabtu_nar_9": {
+        "speakerType": "",
+        "time": "19:30",
+        "questionText": "Kamu ingin melakukan apa?",
+        "text": " ",
+        "uiLayout": "decision",
+        "choices": [
+            { "text": "Buka media sosial.", 
+            "addStress": 20, 
+            "addFocus": -10,
+            "nextNode": "pelajar_sabtu_nar_9A" },
+            { "text": "Matikan HP", 
+            "addStress": -10, 
+            "addFocus": 20,
+            "nextNode": "pelajar_sabtu_player_9B" }
+        ]
+    },
+    "pelajar_sabtu_nar_9A": {
+        "speakerType": "",
+        "time": "20:00",
+        "text": "Kamu meletakkan HP di paha bawah meja, jarimu mulai scrolling dengan cepat. Suara tawa teman-temanmu perlahan meredup di telingamu, tergantikan oleh suara di layar HP.",
+        "next": "pelajar_sabtu_npc_9A1"
+    },
+    "pelajar_sabtu_npc_9A1": {
+        "speakerType": "right",
+        "speakerName": "Putri",
+        "time": "20:00",
+        "text": "Eh [PLAYER], menurut lo gimana? Mending kita ambil paket makanan yang mana buat nanti? ",
+        "charRight": "assets/images/char/putri-flat.png",
+        "next": "pelajar_sabtu_player_9A2"
+    },
+    "pelajar_sabtu_player_9A2": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "20:00",
+        "text": "Hah? Oh... iya... serah aja, bagusan yang itu kok.",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_npc_9A3"
+    },
+    "pelajar_sabtu_npc_9A3": {
+        "speakerType": "right",
+        "speakerName": "Putri",
+        "time": "20:00",
+        "text": "Tuh kan, lo diajak ngomong malah gak nyambung. Dari tadi mata lo ke bawah mulu. Kita kan ke sini mau seru-seruan bareng, bukan mau nemenin lo main HP.",
+        "charRight": "assets/images/char/putri-flat.png",
+        "next": "pelajar_sabtu_npc_9A4"
+    },
+    "pelajar_sabtu_npc_9A4": {
+        "speakerType": "right",
+        "speakerName": "Julie",
+        "time": "20:00",
+        "text": "Iya nih, lo kayak robot deh. Fisiknya di sini, tapi jiwanya di dunia gaib sosmed.",
+        "charRight": "assets/images/char/julie-flat.png",
+        "next": "pelajar_sabtu_nar_9A5"
+    },
+    "pelajar_sabtu_nar_9A5": {
+        "speakerType": "",
+        "text": ".....",
+        "next": "pelajar_sabtu_nar_9A6"
+    },
+    "pelajar_sabtu_player_9B": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "time": "20:00",
+        "text": "Skip dulu deh sosmednya. Gue disini mau konser!!",
+        "charLeft": "assets/images/char-player-flat.png",
+        "next": "pelajar_sabtu_nar_9B1"
+    },
+    "pelajar_sabtu_nar_9B1": {
+        "speakerType": "",
+        "time": "20:00",
+        "text": "Kamu menyimpan HP-mu jauh-jauh. Kamu ikut merebut mikrofon, bernyanyi lepas bersama Julie dan Lutfy, lalu tertawa lepas bersama Putri mendengar cerita Udin.",
+        "next": "pelajar_sabtu_npc_9B2"
+    },
+    "pelajar_sabtu_npc_9B2": {
+        "speakerType": "right",
+        "speakerName": "Udin",
+        "time": "20:00",
+        "text": "Nah gitu dong! Kan seru kalo lo ga liat HP terus! KITA TERIAK SAMPAI SUARA KITA HABIS!!",
+        "charRight": "assets/images/char/udin-happy.png",
+        "next": "pelajar_sabtu_npc_9B3"
+    },
+    "pelajar_sabtu_npc_9B3": {
+        "speakerType": "right",
+        "speakerName": "Lutfy",
+        "time": "20:00",
+        "text": "Ga gitu juga dong. Tapi yes! Let's Go!!",
+        "charRight": "assets/images/char/lutfy-happy.png",
+        "next": "pelajar_sabtu_npc_9B4"
+    },
+    "pelajar_sabtu_npc_9B4": {
+        "speakerType": "right",
+        "speakerName": "Julie",
+        "time": "20:00",
+        "text": "Kalo kata Basara keluarin suara lo!!",
+        "charRight": "assets/images/char/julie-happy.png",
+        "next": "pelajar_sabtu_nar_9B5"
+    },
+    "pelajar_sabtu_nar_9B5": {
+        "speakerType": "",
+        "bg": " ",
+        "text": ".....",
+        "next": "pelajar_sabtu_nar_9B6"
+    },
+    "pelajar_sabtu_nar_9A6": {
+        "speakerType": "",
+        "bg": "assets/images/bg-kamar-malam.jpg",
+        "time": "23:00",
+        "text": "Kamu sampai dirumah. Suasana sepi, berbanding terbalik dengan apa yang kamu rasakan tadi.",
+        "next": "pelajar_sabtu_player_9A7"
+    },
+    "pelajar_sabtu_player_9A7": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "23:00",
+        "text": "Gue ngerasa bersalah banget sama Udin dan Putri tadi... Tapi kok tangan gue gatal banget ya mau buka sosmed lagi sekarang? Hancur banget hari ini.",
+        "next": "pelajar_sabtu_9t"
+    },
+    "pelajar_sabtu_nar_9B6": {
+        "speakerType": "",
+        "bg": "assets/images/bg-kamar-malam.jpg",
+        "time": "23:00",
+        "text": "Kamu pulang dengan senyuman. Tubuhmu lelah karena bernyanyi, tapi pikiranmu terasa sangat segar dan bahagia. ",
+        "next": "pelajar_sabtu_player_9B7"
+    },
+    "pelajar_sabtu_player_9B7": {
+        "speakerType": "left",
+        "speakerName": "[PLAYER]",
+        "charLeft": "assets/images/char-player-flat.png",
+        "time": "23:00",
+        "text": "Seru banget malam ini! Ternyata ngobrol langsung sama mereka jauh lebih asyik daripada ngeliatin layar seharian. Sekarang waktunya istirahat.",
+        "next": "pelajar_sabtu_9t"
+    },
+    "pelajar_sabtu_9t": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Hari Sabtu telah usai. \nKeputusanmu dihari minggu besok akan menentukan bagaimana kamu menghadapi hari Senin.",
+        "nextChapter": "minggu.json",
+        "next": "pelajar_minggu_1"
+    }
+}

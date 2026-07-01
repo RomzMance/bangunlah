@@ -1,0 +1,735 @@
+/* ==========================================================================
+   1. RESET & LAYOUT DASAR
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noir', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+
+#game-container {
+    width: 100vw; height: 100vh; max-width: 1280px; max-height: 720px;
+    position: relative; background-color: #000; overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition: opacity 0.5s ease; }
+.hide { display: none !important; opacity: 0; }
+
+/* Filter Efek Warna Global */
+.filter-monochrome { filter: grayscale(100%) contrast(1.1); transition: filter 1s ease; }
+.filter-vivid { filter: grayscale(0%) saturate(1.2) contrast(1.05); transition: filter 1s ease; }
+
+/* ==========================================================================
+   2. MENU UTAMA & FORM KUESIONER (DARI SISTEM LAMA)
+   ========================================================================== */
+#title-screen { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), #2c3e50; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 50; }
+.game-title { font-size: 3rem; color: white; margin-bottom: 10px; }
+.game-subtitle { font-size: 1.2rem; color: #bdc3c7; margin-bottom: 40px; }
+.menu-btn { background: rgba(255,255,255,0.1); color: white; border: 2px solid white; padding: 12px 24px; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
+.menu-btn:hover { background: white; color: black; }
+
+#form-screen { background: #2c3e50; display: flex; justify-content: center; align-items: center; z-index: 50; }
+.form-container { width: 90%; max-width: 450px; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 10px; color: white; text-align: center; }
+.form-group { margin-bottom: 20px; text-align: left; }
+.form-group input[type="text"] { width: 100%; padding: 10px; font-size: 1rem; border-radius: 5px; margin-top: 5px; }
+.form-error { margin: 6px 0 0; color: #ff8a80; font-size: 0.9rem; }
+.route-options { display: flex; gap: 10px; margin-top: 5px; }
+.radio-card { flex: 1; cursor: pointer; }
+.radio-card input { display: none; }
+.radio-label { display: block; text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border: 1px solid white; border-radius: 5px; }
+.radio-card input:checked + .radio-label { background: #f1c40f; color: black; font-weight: bold; }
+
+
+
+/* ==========================================================================
+   3. GAMEPLAY UI (MOCKUP BARU)
+   ========================================================================== */
+#bg-layer { position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index: 1; }
+
+.ui-btn { 
+    background: rgba(0, 0, 0, 0.8); 
+    color: #ebe7e7; 
+    border: 1px solid #ffffff; 
+    padding: 6px 16px; 
+    font-family: 'Noir', sans-serif;
+    font-weight: bold; 
+    cursor: pointer; 
+    border-radius: 2px; 
+    z-index: 10; }
+
+.ui-btn:hover { background: #000000; }
+/* ==========================================================================
+   TOMBOL KONDISI DISABLED (TERKUNCI)
+   ========================================================================== */
+.ui-btn.choice-disabled { 
+    cursor: not-allowed; 
+    opacity: 0.85; 
+    color: #666666; /* Warna teks abu-abu gelap */
+    
+    /* Matikan/gelapkan background agar beda dari tombol aktif */
+    background: rgba(20, 20, 20, 0.7) !important; 
+    background-image: none !important; /* Hapus gambar aset tombol (jika ada) khusus untuk tombol mati */
+    
+    /* 🛠️ MUNCULKAN BORDER DI SINI */
+    /* Gunakan '!important' agar tidak tertimpa perintah 'border: none' dari class lain */
+    border: 2px solid #666666 !important; /* Garis solid yang tegas */
+    /* Tips: Jika ingin garis putus-putus ala rute terkunci, ganti kata 'solid' dengan 'dashed' */
+    
+    filter: grayscale(100%); 
+}
+
+.ui-btn.choice-disabled:hover { 
+    background: rgba(20, 20, 20, 0.7) !important; 
+    color: #666666; 
+    border-color: #ff3333 !important; /* Opsional: Border jadi merah redup saat disorot untuk menekankan kalau ini dilarang */
+}
+
+.choice-disabled { 
+    text-decoration: line-through; 
+    text-decoration-thickness: 2px; 
+}
+/* NAVBAR ATAS UTUK TOMBOL KONTROL */
+.top-navbar {
+    position: absolute; 
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px; /* Jarak antar tombol */
+    z-index: 50;
+}
+
+/* ==========================================================================
+   FONT CUSTOM (NOIR)
+   ========================================================================== */
+@font-face {
+    font-family: 'Noir';
+    src: url('assets/fonts/NoirLullaby.otf') format('opentype'); /* Sesuaikan nama file .ttf/.otf Anda */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noir Stamp';
+    src: url('assets/fonts/NoirLullabyStamp.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/* ==========================================================================
+   WIDGET WAKTU (TOP CENTER)
+   ========================================================================== */
+.time-widget {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    display: flex;
+    align-items: center; /* Memastikan Hari dan Jam sejajar di tengah */
+    justify-content: center;
+    gap: 12px; /* Jarak antara kotak hitam hari dan angka jam */
+    z-index: 50;
+    
+    background-color: transparent; 
+    background-image: url('assets/images/ui/clockbox.png'); 
+    background-size: 90% 120%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    padding: 15px 40px; 
+    transform: translateX(-50%) rotate(2deg); 
+    filter: drop-shadow(3px 4px 2px rgba(0,0,0,0.5));
+}
+
+#time-day { 
+    font-family: 'Noir', sans-serif; /* Menggunakan Noir Reguler agar mudah dibaca */
+    font-size: 0.9rem; /* Ukuran lebih kecil */
+    font-weight: bold;
+    
+    background-color: #000; /* Latar belakang kotak hitam pekat */
+    color: #fff; /* Teks putih bersih */
+    
+    padding: 4px 12px; 
+    border-radius: 4px; /* Ujung kotak dibuat sedikit membulat */
+    letter-spacing: 1.5px;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.5); /* Efek kotak timbul ala komik */
+}
+
+#time-clock { 
+    font-family: 'Noir Stamp', sans-serif; /* Menggunakan font Stempel grunge */
+    font-size: 1.8rem; /* Ukuran menonjol dan jauh lebih besar */
+    font-weight: 900;
+    
+    color: #000; /* Teks hitam */
+    
+    letter-spacing: 3px; 
+    -webkit-text-stroke: 0.5px #000; /* Trik agar font terlihat ekstra tebal */
+}
+
+/* ==========================================================================
+   METERAN MIRING (INDEPENDENT POSITIONS)
+   ========================================================================== */
+.meter-item-independent { 
+    position: absolute; /* Wajib agar bisa diletakkan di mana saja secara bebas */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    z-index: 60 !important; 
+}
+
+/* 1. KENDALI POSISI METERAN STRESS */
+#stress-meter-box {
+    left: 20px;  /* Jarak dari kiri layar */
+    top: 110px;  /* Jarak dari atas layar (lebih rendah) */
+    transform: rotate(-6deg); /* Miring ke kiri sedikit */
+}
+
+/* 2. KENDALI POSISI METERAN FOCUS */
+#focus-meter-box {
+    left: 80px;  /* Jarak dari kiri layar (lebih ke kanan dari stress) */
+    top: 60px;   /* Jarak dari atas layar (lebih tinggi) */
+    transform: rotate(-4deg); /* Miringnya bisa dibedakan juga! */
+}
+
+/* --- GAYA VISUAL (Tetap sama seperti yang sudah kita perbaiki) --- */
+.m-title { 
+    color: #000000; 
+    font-size: 1.1rem; 
+    text-transform: uppercase; 
+    text-shadow: 3px 3px 0px rgba(255, 255, 255, 0.8); 
+    margin-bottom: 12px; 
+    transform: rotate(-15deg); 
+    letter-spacing: 2px;
+    font-family: 'Noir Stamp', sans-serif;
+}
+
+.m-track { 
+    /* Lebarkan sedikit untuk menampung ketebalan gambar bingkai Anda */
+    width: 35px; 
+    height: 230px; 
+    
+    /* 1. GANTI BORDER CSS DENGAN GAMBAR ASET ANDA */
+    background-image: url('assets/images/ui/meterbox.png'); /* Pastikan nama filenya tepat! */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-color: transparent; /* Buang warna dasar wadah lama */
+    
+    /* 2. HAPUS EFEK KAKU BAWAAN */
+    border: none; 
+    box-shadow: none; 
+    
+    /* 3. Tambahkan bayangan yang mengikuti bentuk sobekan gambar PNG Anda */
+    filter: drop-shadow(4px 4px 2px rgba(0,0,0,0.6));
+    position: relative; 
+}
+
+.m-fill {
+    /* 4. SESUAIKAN ISI BAR DENGAN BINGKAI BARU */
+    width: 15px; /* Lebar isi putihnya (sesuaikan dengan besar lubang bingkai Anda) */
+    
+    background: #fff; 
+    position: absolute; 
+    
+    /* 5. DORONG ISI BAR KE TENGAH BINGKAI */
+    bottom: 10px; /* Angkat sedikit agar tidak menabrak bingkai bawah */
+    left: 10px;   /* Geser ke kanan agar tidak menabrak bingkai kiri */
+    
+    /* Batasi tinggi maksimal agar saat 100%, isinya tidak keluar dari bingkai atas */
+    max-height: 90%; 
+    
+    transition: height 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    border-top: 3px solid #000; 
+}
+
+/* ==========================================================================
+   PANGGUNG KARAKTER & POSISI SPRITE
+   ========================================================================== */
+#character-stage { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 75%; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 5%; 
+    pointer-events: none; 
+    z-index: 5; 
+}
+
+.char-sprite { 
+    max-height: 90%; 
+    align-self: flex-end; 
+    object-fit: contain; 
+}
+
+/* --- TAMBAHKAN KODE BARU DI BAWAH INI --- */
+
+/* Mengontrol khusus Karakter NPC (Kanan) */
+#char-right {
+    /* Angka 50px ini akan mendorong gambar Udin lebih masuk ke kanan layar.
+       Jika kurang ke kanan, Anda bisa besarkan angkanya menjadi 80px atau 100px. */
+    transform: translateX(50px); 
+}
+
+/* Mengontrol khusus Karakter Player (Kiri) - opsional jika nanti butuh */
+#char-left {
+    transform: translateX(0px); 
+}
+/* Pilihan Tengah */
+.choices-wrapper { 
+    position: absolute; 
+    top: 40%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    width: 85%; 
+    max-width: 580px; 
+    
+    z-index: 100 !important; 
+    
+    background: transparent;
+    padding: 18px; 
+    border-radius: 4px; 
+}
+.question-box { 
+    background-color: transparent; 
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    padding: 10px; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    
+    /* 3. PENYESUAIAN TEKS (Agar tetap terbaca walau tanpa kotak) */
+    color: #fff; /* Ubah ke putih (atau #000 jika background game Anda sangat terang) */
+    font-family: 'Noir Stamp', sans-serif; /* Gunakan font stempel agar estetik */
+    font-size: 1.5rem;
+    font-weight: bold; 
+    
+    /* Tambahkan bayangan hitam pekat agar teks selalu terbaca di background apapun */
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.9),
+                 -1px -1px 0px rgba(0,0,0,0.9),  
+                  1px -1px 0px rgba(0,0,0,0.9),
+                 -1px  1px 0px rgba(0,0,0,0.9),
+                  1px  1px 0px rgba(0,0,0,0.9);
+    letter-spacing: 1px;
+}
+.choices-grid { display: grid; gap: 8px; width: 100%; }
+.layout-stacked { grid-template-columns: 1fr; }
+.layout-grid { grid-template-columns: 1fr 1fr; }
+.choices-grid .ui-btn { 
+    padding: 12px; 
+    font-family: 'Noir', sans-serif; /* Atau pakai Stamp jika Anda ingin */
+    font-size: 1.1rem;
+}
+
+/* Area Kotak Teks & Nama */
+/* ==========================================================================
+   KOTAK NAMA KARAKTER (TORN PAPER STYLE)
+   ========================================================================== */
+.name-box {
+    position: absolute; 
+    
+    /* 1. MENGATUR POSISI (Naikkan sedikit agar menumpang di atas kotak dialog) */
+    top: 10px;  /* Semakin minus angkanya, semakin naik ke atas */
+    left: 10px;  /* Geser dari ujung kiri kotak dialog */
+    
+    /* 2. BACKGROUND GAMBAR PNG ANDA */
+    background-color: transparent !important; /* Gunakan warna #ff0000 (merah) sementara jika mau ngetes posisinya */
+    background-image: url('assets/images/ui/namebox.png'); /* PASTIKAN NAMA FILE BENAR */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* 3. PENGATURAN TEKS DAN RUANG (PADDING) */
+    padding: 10px 30px; /* Atur agar teks "Player" pas di tengah gambar PNG */
+    color: #b60000; /* Warna huruf */
+    font-family: 'Noir', sans-serif;
+    font-weight: bold; 
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    
+    /* 4. PASTIKAN SELALU DI DEPAN */
+    z-index: 50 !important;
+    white-space: nowrap; 
+    min-width: 140px; 
+    text-align: center;
+    
+    /* Efek bayangan pop-out */
+    filter: drop-shadow(2px 4px 2px rgba(0,0,0,0.4));
+    
+    /* Miringkan sedikit agar lebih estetik ala Persona */
+    transform: rotate(-2deg);
+}
+
+.pos-left { left:220px; }
+.pos-right { right: 220px; left: auto; } /* Jika kotak NPC, muncul di kanan */
+
+/* ==========================================================================
+   ZONA BAWAH (WADAH KOTAK DIALOG & NAMA)
+   ========================================================================== */
+.bottom-ui-zone { 
+    position: absolute; 
+    bottom: 30px; /* Jangkar yang menariknya ke bawah layar */
+    left: 50%; 
+    transform: translateX(-50%); /* Trik agar posisinya pas di tengah-tengah */
+    width: 85%; /* Lebar kotak dialog */
+    max-width: 1000px; /* Batas maksimal lebar di layar PC */
+    z-index: 40; 
+}
+/* ==========================================================================
+   KOTAK DIALOG (TORN PAPER STYLE)
+   ========================================================================== */
+.main-textbox { 
+    width: 100%; 
+    min-height: 220px; /* Tinggi minimal kotak */
+    
+    /* 1. Hapus warna abu-abu lama, ganti dengan gambar PNG Anda */
+    background-color: transparent; 
+    
+    /* 2. Sihir Responsif: Paksa gambar mengikuti ukuran kotak persis */
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* 3. Padding: Dorong teks ke dalam agar tidak menabrak sobekan kertas */
+    /* Atas 30px, Kanan 40px, Bawah 30px, Kiri 40px (Sesuaikan dengan gambar Anda) */
+    padding: 75px 40px 75px 120px; 
+    
+    /* 4. Pengaturan Teks */
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    color: #000; /* Warna teks hitam sesuai desain */
+    position: relative; 
+    cursor: pointer; 
+    
+    /* Tambahkan sedikit bayangan jatuh (drop shadow) pada kotaknya agar lebih Pop-out */
+    filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.4));
+}
+
+/* ==========================================================================
+   KOTAK DIALOG UTAMA (PSEUDO-ELEMENT BACKGROUND SYSTEM)
+   ========================================================================== */
+.main-textbox { 
+    width: 100%; 
+    min-height: 220px; 
+    position: relative; 
+    cursor: pointer; 
+    filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.4));
+    
+    /* Pengaturan dasar teks di dalam kotak */
+    font-size: 1.1rem; 
+    line-height: 1.5; 
+    color: #000; 
+    z-index: 10;
+}
+
+/* Wadah "Sihir" khusus untuk menampung aset PNG agar bisa di-flip tanpa merusak teks */
+.main-textbox::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: 100% 100%; 
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1; /* Mengunci gambar agar selalu berada di BELAKANG teks */
+}
+
+/* 1. STATUS PLAYER (Ekor balon dialog ada di KIRI) */
+.main-textbox.state-player::before {
+    background-image: url('assets/images/ui/dialoguebox.png');
+    transform: scaleX(1); /* Gambar normal */
+}
+.main-textbox.state-player {
+    width: 100%;
+    max-width: 850px;
+    margin-left: auto;
+    padding: 75px 40px 75px 100px; /* Ruang longgar 120px di kiri untuk area ekor */
+}
+
+/* 2. STATUS NPC (Gambar DI-FLIP, Ekor balon otomatis pindah ke KANAN) */
+.main-textbox.state-npc::before {
+    background-image: url('assets/images/ui/dialoguebox.png');
+    transform: scaleX(-1); /* HANYA gambarnya yang dibalik! Teks Anda tetap normal */
+}
+.main-textbox.state-npc {
+    width: 100%;
+    max-width: 850px;
+    margin-right: auto;
+    /* Karena ekornya pindah ke kanan, kita tukar padding besarnya ke KANAN (120px) 
+       agar teks tidak menabrak ekor kertas di kanan */
+    padding: 75px 140px 75px 50px; 
+}
+
+/* 3. STATUS NARATOR (Aset kotak baru tanpa ekor) */
+.main-textbox.state-narrator::before {
+    background-image: url('assets/images/ui/narratorbox.png'); /* Pastikan file ini ada, atau ganti ke dialoguebox.png jika belum siap */
+    transform: scaleX(1);
+}
+.main-textbox.state-narrator {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 60px 60px 60px 60px; /* Padding seimbang di semua sisi */
+}
+
+
+#dialog-text { white-space: pre-wrap; }
+.typewriter-font {
+    font-family: 'Noir', sans-serif;
+    /* Tambahan agar lebih estetik: */
+    letter-spacing: 0.5px; 
+}
+.dialog-thought { font-style: italic; color: #5a3d2b; opacity: 0.95; }
+.next-arrow { position: absolute; bottom: 57px; left: 87%; transform: translateX(-50%); }
+.log-trigger { position: absolute; bottom: 15px; right: 25px; }
+/* Class khusus untuk menyembunyikan elemen tanpa merusak layout */
+.invisible {
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+/* ==========================================================================
+   LOG DIALOG (RIWAYAT PERCAKAPAN)
+   ========================================================================== */
+.log-overlay { 
+    position: absolute; top:0; left:0; width:100%; height:100%; 
+    background: transparent;
+    
+    z-index: 100; display: flex; justify-content: center; align-items: center; 
+}
+
+.log-window { 
+    width: 80%; height: 75%; 
+    background: rgba(240, 240, 240, 0.95); 
+    background-image: url('assets/images/ui/papertexture.jpg');
+    background-size: 120% 135%; 
+    background-repeat: no-repeat;
+    background-position: center; /* Dibuat sedikit lebih gelap agar layar belakang tidak mengganggu */
+    padding: 25px; display: flex; flex-direction: column; 
+    border-radius: 4px;
+    filter: drop-shadow(5px 6px 4px rgba(0,0,0,0.4));
+
+    /* 1. UBAH FONT DASAR LOG DI SINI */
+    font-family: 'Noir', sans-serif; 
+    color: #1a1a1a; 
+}
+
+.log-header { 
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 15px; 
+    
+    /* Font Judul Log */
+    font-family: 'Noir Stamp', sans-serif;
+    font-size: 1.5rem;
+}
+
+.log-stream { 
+    flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; 
+    
+    font-size: 1.1rem;
+    line-height: 1;
+    padding-right: 15px; /* Memberi jarak agar teks tidak menabrak scrollbar */
+}
+
+/* 3. MENGUBAH FONT NAMA KARAKTER DI DALAM LOG (Jika nama dicetak tebal/<b>) */
+.log-stream b, .log-stream strong {
+    font-family: 'Noir', sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.floating-log-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 50;
+}
+
+
+
+    /* Gaya Visual Aset PNG untuk Ketiga Tombol */
+    .custom-hud-btn {
+    background-color: transparent !important; /* Paksa buang warna abu-abu bawaan */
+    background-image: url('assets/images/ui/buttonboxblack.png'); /* Ganti dengan file PNG tombol Anda! */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+    border: none !important; /* Buang garis pinggir kaku */
+    color: #ffffff; /* Warna teks hitam */
+    font-family: 'Noir Stamp', sans-serif; /* Menggunakan font stempel */
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 25px; /* Jarak teks ke pinggir gambar (Sesuaikan dengan gambar Anda) */
+    cursor: pointer;
+    
+    filter: drop-shadow(3px 4px 2px rgba(0,0,0,0.5)); /* Efek bayangan pop-out */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+    }
+
+    /* 4. Animasi Kinetik saat Disentuh (Hover) */
+    .custom-hud-btn:hover {
+    transform: scale(1.1) rotate(-3deg); /* Membesar 10% dan miring sedikit ke kiri */
+    filter: drop-shadow(5px 6px 3px rgba(0,0,0,0.7)); /* Bayangan makin menjauh */
+    color:  #ffffff;
+    }
+
+    /* Animasi saat tombol ditekan (Klik) */
+    .custom-hud-btn:active {
+    transform: scale(0.95); /* Sedikit mengecil seperti ditekan ke dalam layar */
+    }
+
+
+    /* ==========================================================================
+   LAYAR TRANSISI ANIMASI (CINEMATIC BLACK SCREEN)
+   ========================================================================== */
+#transition-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: #000; /* Hitam pekat */
+    z-index: 1000; /* Posisikan paling depan menutupi seluruh game */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out; /* Durasi animasi memudar lambat 1.5 detik */
+}
+
+/* Trik memanipulasi class hide khusus untuk layar transisi */
+#transition-overlay.hide {
+    opacity: 0 !important; /* Hilang perlahan menjadi transparan */
+    display: flex !important; /* Paksa tetap ada wujudnya agar animasi jalan */
+    pointer-events: none; /* Jangan halangi klik pemain saat sedang transparan */
+}
+
+#transition-text {
+    color: #fff;
+    font-family: 'Noir', sans-serif; /* Menggunakan Noir Reguler agar rapi */
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 75%;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   PERINGATAN PORTRAIT MODE (CSS BLOCKER)
+   ========================================================================== */
+#portrait-warning { display: none; }
+
+@media screen and (orientation: portrait) {
+    #portrait-warning {
+        display: flex; justify-content: center; align-items: center;
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background-color: #000; color: #fff; z-index: 9999; 
+        text-align: center; padding: 20px; font-family: 'Noir', sans-serif;
+    }
+    #game-container { display: none !important; } /* Sembunyikan game saat portrait */
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN V2 (LANDSCAPE MOBILE SETTINGS)
+   ========================================================================== */
+/* Kita targetkan tinggi layar maksimal 600px (Kondisi HP saat Landscape) */
+@media screen and (max-height: 600px), screen and (max-width: 850px) {
+    
+    /* 1. KOTAK DIALOG (Mirip PC tapi pas di HP) */
+    .bottom-ui-zone { 
+        position: absolute; 
+        bottom: 12px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+    
+        width: 65%; 
+    
+    /* 🛠️ INI KUNCINYA: Jangan gunakan 1000px, turunkan menjadi 800px atau 850px 
+       agar gambar sobekan tidak ditarik terlalu panjang dan menjadi gepeng */
+        -width: 200px; 
+    
+        z-index: 40; 
+    }
+    .main-textbox {
+        width: 100%; 
+        min-height: 165px; 
+        
+        /* Tambahan agar proporsi gambarnya tidak rusak */
+        aspect-ratio: 5 / 1; /* Anda bisa ubah angkanya, misalnya 16/4 atau 16/6 sampai gambarnya terlihat paling pas */
+        
+        position: relative; 
+        cursor: pointer; 
+        filter: drop-shadow(4px 6px 4px rgba(0,0,0,0.4));
+        font-size: 0.8rem; 
+        line-height: 1.5; 
+        color: #000; 
+        z-index: 10;
+    }
+    .main-textbox.state-player { padding: 43px 30px 45px 70px; }
+    .main-textbox.state-npc { padding: 43px 70px 45px 40px; }
+    .main-textbox.state-narrator { padding: 35px 35px; }
+
+    /* 2. NAMEBOX (Posisi Kunci di Sudut Dialog) */
+    .name-box {
+        font-size: 1.1rem;
+        padding: 5px 25px;
+        top: 0px; 
+        min-width: 110px;
+    }
+    /* Koordinat baru yang presisi untuk HP */
+    .pos-left { left: 8%; } 
+    .pos-right { right: 8%; left: auto; }
+
+    /* 2. MENGECILKAN CHOICES AGAR TIDAK SEMPIT */
+    .choices-wrapper {
+        width: 85%; /* Jangan 100%, beri ruang kosong di kiri-kanan */
+        padding: 10px 20px; /* Kurangi area gradien yang berlebihan */
+    }
+    .question-box {
+        font-size: 1rem; /* Teks pertanyaan dikecilkan sedikit */
+        padding: 6px 30px;
+        margin-bottom: 10px;
+    }
+    
+
+    /* 3. KARAKTER (Tinggi yang wajar, tidak raksasa) */
+    #character-stage {
+        height: 100%; 
+    }
+    .char-sprite {
+        max-height: 80%; /* Turunkan dari 100% agar kepala tidak terpotong Navbar */
+        transform-origin: bottom center;
+    }
+    #char-right { transform: translateX(80px); } /* Cukup geser, jangan di-scale lagi */
+    #char-left { transform: translateX(-30px); }
+
+    /* 4. METERAN & JAM (Lebih kecil dan ke pinggir) */
+    #stress-meter-box { transform: scale(0.7) rotate(-7deg); left: 0px; top: 50px; }
+    #focus-meter-box { transform: scale(0.6) rotate(-4deg); left: 40px; top: -10px; }
+    
+    .time-widget {
+        top: 5px;
+        transform: translateX(-50%) scale(0.7) rotate(2deg); /* Shrink 20% secara keseluruhan */
+    }
+
+    /* 5. MENU NAVIGASI (BGM, Restart, Log) */
+    .top-navbar { top: 10px; right: 10px; gap: 8px; }
+    .top-navbar .ui-btn, .floating-log-btn {
+        font-size: 0.7rem; padding: 4px 10px;
+    }
+    .floating-log-btn { bottom: 10px; right: 10px; }
+
+    /* 6. MENGECILKAN TEKS TRANSISI DI HP */
+    #transition-text {
+        font-size: 1rem; /* Ukuran yang lebih manis dan tidak sesak untuk layar HP */
+        max-width: 60%; /* Beri ruang agar teks bisa lebih melebar ke pinggir layar HP */
+    }
+
+    /* 7. MENGECILKAN FONT LOG DI HP */
+    .log-window { width: 70%; height: 70%; padding: 15px; }
+    .log-header { font-size: 1rem; }
+    .log-stream { font-size: 0.9rem; gap: 2px; }
+}
