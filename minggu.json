@@ -363,23 +363,35 @@
     "pelajar_minggu_nar_21": {
         "speakerType": "",
         "bg": " ",
-        "text": "Kamu menutup matamu matamu.",
+        "text": "Kamu menutup matamu.",
         "checkStress": {
             "threshold": 70, 
-            "highNode": "pelajar_ending_bad",
-            "lowNode": "pelajar_ending_good"
+            "highNode": "pelajar_minggu_nar_21A",
+            "lowNode": "pelajar_minggu_nar_21B"
         }
+    },
+    "pelajar_minggu_nar_21A": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Kamu kembali tenggelam dalam ketidaksadaranmu yang tidak terbatas. Kamu kembali lupa akan waktu, tidak sadar atas dampak negatifnya. Pikiranmu stress, matamu terasa tidak kunjung lelah, dan kamu perlahan kehilangan dirimu.",
+        "next": "pelajar_ending_bad"
+    },
+    "pelajar_minggu_nar_21B": {
+        "speakerType": "",
+        "bg": " ",
+        "text": "Kamu akhirnya bangun dari ketidaksadaranmu. Lingkaran stress yang menghantuimu akhirnya pecah, perasaan lega mulai meresapimu. Energimu kembali, teman-temanmu mulai kembali senang saat berbincang denganmu. Kamu berhasil terbangun.",
+        "next": "pelajar_ending_bad"
     },
 
 
     
 
     "pelajar_ending_bad": {
-        "triggerEnding": "BAD ENDING<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Terjebak dalam Ilusi Layar</span>"
+        "triggerEnding": "KESADARANMU KEMBALI HILANG<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Kapan kamu akan sadar dan membuat perubahan? \nAkan selalu ada waktu untuk berubah menjadi lebih baik.</span>"
     },
 
     "pelajar_ending_good": {
-        "triggerEnding": "GOOD ENDING<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Terbangun dari Mimpi Panjang</span>"    
+        "triggerEnding": "KAMU BERTEKAD UNTUK BERUBAH<br><span style='font-size: 1.2rem; font-family: Noir, sans-serif;'>Perubahan baik yang kamu lakukan akan selalu menjadi hal yang dapat dibanggakan.</span>"    
     }
 
 

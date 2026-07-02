@@ -21,7 +21,13 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
 /* ==========================================================================
    2. MENU UTAMA & FORM KUESIONER (DARI SISTEM LAMA)
    ========================================================================== */
-#title-screen { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), #2c3e50; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 50; }
+#title-screen { 
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), #2c3e50; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 50; }
 .game-title { font-size: 3rem; color: white; margin-bottom: 10px; }
 .game-subtitle { font-size: 1.2rem; color: #bdc3c7; margin-bottom: 40px; }
 .menu-btn { background: rgba(255,255,255,0.1); color: white; border: 2px solid white; padding: 12px 24px; cursor: pointer; border-radius: 4px; transition: all 0.3s; }

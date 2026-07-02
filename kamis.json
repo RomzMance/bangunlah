@@ -123,8 +123,7 @@
         "bg": "assets/images/bg-sekolah-koridor.jpg",
         "charRight": "assets/images/char/udin-happy.png",
         "time": "17:00",
-        "text": "Selesai juga akhirnya! Eh [PLAYER], gue akhir-akhir ini ngerasa gampang capek deh, kalo kata Emak gue sih kebanyakan hp. Udah sering banget tuh diterakin 'HP TEROSSSSSSS!!!' sama Emak gue. Gue jadi kepikiran, apa emang bener gara-gara HP ya? Gimana menurut lo [PLAYER]?",
-        "next": "pelajar_kamis_player_2A"
+        "text": "Selesai juga! Eh [PLAYER], akhir-akhir ini gue gampang capek deh. Kata Emak gue sih gara-gara kebanyakan main HP. Tiap hari diterakin 'HP TEROSSS!' mulu. Menurut lo bener gak sih?"
     },
     "pelajar_kamis_player_2A": {
         "speakerType": "left",
