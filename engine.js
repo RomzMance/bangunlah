@@ -84,22 +84,22 @@ async function loadChapter(chapterFile, startNodeId) {
 // 3. LOGIKA ALUR SCREEN (SISTEM LAMA)
 // ==========================================================================
 startBtn.addEventListener('click', () => {
-    // 🎬 DETEKSI MOBILE: Hanya jalankan fullscreen jika lebar layar di bawah 850px (HP/Tablet)
-    if (window.innerWidth <= 850) {
-        const elem = document.documentElement;
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari/iOS */
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
-            elem.msRequestFullscreen();
-        }
+    // // 🎬 DETEKSI MOBILE: Hanya jalankan fullscreen jika lebar layar di bawah 850px (HP/Tablet)
+    // if (window.innerWidth <= 850) {
+    //     const elem = document.documentElement;
+    //     if (elem.requestFullscreen) {
+    //         elem.requestFullscreen();
+    //     } else if (elem.webkitRequestFullscreen) { /* Safari/iOS */
+    //         elem.webkitRequestFullscreen();
+    //     } else if (elem.msRequestFullscreen) { /* IE11 */
+    //         elem.msRequestFullscreen();
+    //     }
 
-        // Coba paksa kunci layar ke landscape (Hanya jalan di Android)
-        if (screen.orientation && screen.orientation.lock) {
-            screen.orientation.lock('landscape').catch(err => console.log("Kunci layar ditolak sistem."));
-        }
-    }
+    //     // Coba paksa kunci layar ke landscape (Hanya jalan di Android)
+    //     if (screen.orientation && screen.orientation.lock) {
+    //         screen.orientation.lock('landscape').catch(err => console.log("Kunci layar ditolak sistem."));
+    //     }
+    // }
 
     currentStressVal = 50; 
     currentFocusVal = 20;
