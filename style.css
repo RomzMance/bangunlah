@@ -3,12 +3,37 @@
    ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noir', Tahoma, Geneva, Verdana, sans-serif; }
 
-body { background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow: hidden; }
+/* ==========================================================================
+   1. RESET & LAYOUT DASAR
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Noir', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { 
+    background-color: #1a1a1a; /* Warna abu-abu gelap untuk "space" kosong di luar game */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    overflow: hidden; 
+}
 
 #game-container {
-    width: 100vw; height: 100vh; max-width: 1280px; max-height: 720px;
-    position: relative; background-color: #000; overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative; 
+    background-color: #000; 
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    border-radius: 12px; 
+    
+    aspect-ratio: 16 / 9;
+    
+    /* 1. PERLEBAR LEBARNYA: Ubah dari 95vw menjadi 98vw (Sisa jarak kiri-kanan menipis) */
+    width: 98vw; 
+    
+    /* 2. NAIKKAN TINGGI MAKSIMAL: Ubah dari 85vh menjadi 92vh (Padding atas-bawah menipis) */
+    max-height: 85vh; 
+    
+    /* 3. SINKRONKAN: Pastikan angkanya diubah menjadi 92vh juga di sini */
+    max-width: calc(92vh * (16 / 9)); 
 }
 
 .screen { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition: opacity 0.5s ease; }
@@ -639,7 +664,7 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
         text-align: center; padding: 20px; font-family: 'Noir', sans-serif;
     }
     #game-container { display: none !important; } /* Sembunyikan game saat portrait */
-}
+}  
 
 /* ==========================================================================
    RESPONSIVE DESIGN V2 (LANDSCAPE MOBILE SETTINGS)
