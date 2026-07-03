@@ -741,6 +741,43 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
     .log-window { width: 70%; height: 70%; padding: 15px; }
     .log-header { font-size: 1rem; }
     .log-stream { font-size: 0.9rem; gap: 2px; }
+
+    /* ========================================================= */
+    /* PERBAIKAN UKURAN TITLE SCREEN KHUSUS HP                   */
+    /* ========================================================= */
+    
+    .main-title {
+        font-size: 3rem !important; /* Dikecilkan dari 5rem */
+        top: 35% !important; 
+    }
+    
+    .start-btn-pos {
+        font-size: 1.5rem !important; /* Tombol dikecilkan */
+        padding: 8px 30px !important;
+        top: 45% !important; 
+        right: 10% !important;
+    }
+    
+    .title-subtitle {
+        font-size: 1rem !important;
+        bottom: 12% !important;
+        right: 10% !important;
+    }
+    
+    .kuesioner-btn-pos {
+        font-size: 0.9rem !important;
+        padding: 6px 15px !important;
+        bottom: 12% !important;
+    }
+
+    /* Pengecilan juga untuk Layar Terima Kasih di HP */
+    .thankyou-layout h2 {
+        font-size: 2rem !important;
+    }
+    .thankyou-layout p {
+        font-size: 1rem !important;
+        margin-bottom: 20px !important;
+    }
 }
 
 /* ========================================================================== */
