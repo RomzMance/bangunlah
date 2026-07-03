@@ -12,6 +12,11 @@ const typingSpeed = 30;
 let currentBgmPath = "";
 let dialogHistory = [];
 
+const thankyouScreen = document.getElementById('thankyou-screen');
+const kuesionerTitleBtn = document.getElementById('kuesioner-title-btn');
+const kuesionerEndBtn = document.getElementById('kuesioner-end-btn');
+const backToTitleBtn = document.getElementById('back-to-title-btn');
+
 const sfxClick = new Audio('assets/audio/papercollect3.wav');
 const sfxPencil = new Audio('assets/audio/pencilscratch.wav');
 
@@ -183,6 +188,9 @@ function showNode(nodeId) {
         currentBgmPath = "";
         gameScreen.classList.add('hide');
         restartBtn.classList.add('hide');
+
+        thankyouScreen.classList.add('hide');
+
         titleScreen.classList.remove('hide');
         document.getElementById('player-name-input').value = "";
         return;
@@ -455,6 +463,13 @@ function handleDialogClick(e) {
             showNode(node.next); // Lanjut normal seperti biasa
         }
     }
+    // Link menuju kuesioner (Buka di tab baru)
+    const linkKuesioner = "https://youtu.be/dQw4w9WgXcQ?si=LIAW8N93Q_vlmrrY";
+
+    // Tombol kembali dari layar Thank You ke Layar Utama
+    backToTitleBtn.addEventListener('click', () => {
+        showNode("title_screen_back");
+    });
 }
 
 // Gunakan .onclick agar mengunci perintah ini sebagai satu-satunya aksi kotak dialog!
@@ -634,11 +649,12 @@ function playEnding(endingTitle) {
             focusBar.style.height = "20%";
             
             // 7. Kembali ke menu utama dan bersihkan teks transisi
-            showNode("title_screen_back");
-            transitionText.innerHTML = ""; 
+            gameScreen.classList.add('hide');
+            thankyouScreen.classList.remove('hide');
+            transitionText.innerHTML = "";
         }, 1500); // Waktu memudar
         
-    }, 5000); // Waktu tahan layar (5 detik)
+    }, 10000); // Waktu tahan layar (5 detik)
 }
 
 

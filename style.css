@@ -21,19 +21,20 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
 /* ==========================================================================
    2. MENU UTAMA & FORM KUESIONER (DARI SISTEM LAMA)
    ========================================================================== */
-#title-screen { 
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), #2c3e50; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 50; }
+/* #title-screen { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), #2c3e50; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 50; } */
 .game-title { font-size: 3rem; color: white; margin-bottom: 10px; }
 .game-subtitle { font-size: 1.2rem; color: #bdc3c7; margin-bottom: 40px; }
-.menu-btn { background: rgba(255,255,255,0.1); color: white; border: 2px solid white; padding: 12px 24px; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
+.menu-btn { background: rgba(56, 56, 56, 0.1); color: white; border: 2px solid white; padding: 12px 24px; cursor: pointer; border-radius: 4px; transition: all 0.3s; }
 .menu-btn:hover { background: white; color: black; }
 
-#form-screen { background: #2c3e50; display: flex; justify-content: center; align-items: center; z-index: 50; }
+#form-screen { 
+    background: #b1b1b1; 
+    background-image: url('assets/images/ui/papertexture.jpg');
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 50; 
+}
 .form-container { width: 90%; max-width: 450px; background: rgba(0,0,0,0.6); padding: 30px; border-radius: 10px; color: white; text-align: center; }
 .form-group { margin-bottom: 20px; text-align: left; }
 .form-group input[type="text"] { width: 100%; padding: 10px; font-size: 1rem; border-radius: 5px; margin-top: 5px; }
@@ -348,7 +349,7 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
     
     /* 3. PENGATURAN TEKS DAN RUANG (PADDING) */
     padding: 10px 30px; /* Atur agar teks "Player" pas di tengah gambar PNG */
-    color: #b60000; /* Warna huruf */
+    color: #000000; /* Warna huruf */
     font-family: 'Noir', sans-serif;
     font-weight: bold; 
     font-size: 1.5rem;
@@ -479,13 +480,15 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
 }
 
 
-#dialog-text { white-space: pre-wrap; }
+#dialog-text { 
+    white-space: pre-wrap;
+    color: #000000; }
 .typewriter-font {
     font-family: 'Noir', sans-serif;
     /* Tambahan agar lebih estetik: */
     letter-spacing: 0.5px; 
 }
-.dialog-thought { font-style: italic; color: #5a3d2b; opacity: 0.95; }
+.dialog-thought { font-style: italic; color: #000000; opacity: 0.95; }
 .next-arrow { position: absolute; bottom: 57px; left: 87%; transform: translateX(-50%); }
 .log-trigger { position: absolute; bottom: 15px; right: 25px; }
 /* Class khusus untuk menyembunyikan elemen tanpa merusak layout */
@@ -738,4 +741,73 @@ body { background-color: #1a1a1a; display: flex; justify-content: center; align-
     .log-window { width: 70%; height: 70%; padding: 15px; }
     .log-header { font-size: 1rem; }
     .log-stream { font-size: 0.9rem; gap: 2px; }
+}
+
+/* ========================================================================== */
+/* CUSTOM TITLE SCREEN LAYOUT */
+/* ========================================================================== */
+.title-screen-layout {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Latar putih bersih */
+    background-image: url('assets/images/ui/papertexture.jpg');
+    overflow: hidden;
+}
+
+.main-title {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 5rem;
+    transform: translateY(-50%);
+    margin: 0;
+    color: #000;
+}
+
+.start-btn-pos {
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    font-size: 2rem; /* Membuat tombol Mulai lebih besar */
+    padding: 10px 40px;
+}
+
+.kuesioner-btn-pos {
+    position: absolute;
+    bottom: 15%;
+    left: 10%;
+    z-index: 100 !important; /* 🛠️ Paksa tombol maju ke layer paling depan */
+    cursor: pointer;
+}
+
+.title-subtitle {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    font-size: 1.5rem;
+    margin: 0;
+    color: #000;
+}
+
+/* ========================================================================== */
+/* THANK YOU SCREEN LAYOUT */
+/* ========================================================================== */
+.thankyou-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #000;
+    text-align: center;
+}
+
+.thankyou-actions {
+    display: flex;
+    gap: 20px;
+    z-index: 100 !important; /* 🛠️ Paksa tombol di layar akhir maju ke depan */
+    position: relative;
 }

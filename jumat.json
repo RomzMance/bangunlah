@@ -2,7 +2,7 @@
     "pelajar_jumat_nar_4": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "day": "JUMAT",
         "time": "05:00",
         "text": "Alarm berbunyi dengan keras, kamu terbangun dengan kepala yang terasa berat dan mata yang terasa perih.",
@@ -33,7 +33,7 @@
     "pelajar_jumat_nar_4A1": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": ".....",
         "next": "pelajar_jumat_nar_4A2"
     },
@@ -96,14 +96,14 @@
     "pelajar_jumat_nar_4A511": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": ".....",
         "next": "pelajar_jumat_nar_4A512"
     },
     "pelajar_jumat_nar_4A512": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "time": "07:00",
         "text": "30 menit sudah berlalu.",
         "next": "pelajar_jumat_player_4A513"
@@ -286,7 +286,7 @@
     },
     "pelajar_jumat_nar_6A": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Akhirnya kelas terakhir hari ini selesai.",
         "next": "pelajar_jumat_npc_7"
     },
@@ -326,7 +326,7 @@
     },
     "pelajar_jumat_9t": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Kamu akhirnya sampai dirumah. \nDi kamar kamu merasa sangat lelah, \njadi kamu memutuskan untuk langsung beristirahat.",
         "nextChapter": "sabtu.json",
         "next": "pelajar_sabtu_nar_1"

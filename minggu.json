@@ -180,14 +180,14 @@
 
     "pelajar_minggu_nar_7": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Hari sudah semakin malam. Kamu masih memiliki aktivitas di hari esok.",
         "next": "pelajar_minggu_nar_8"
     },
     "pelajar_minggu_nar_8": {
         "speakerType": "",
         "time": "22:00",
-        "bg": "assets/images/bg-kamar-malem.jpg",
+        "bg": "assets/images/bg-kamar-malam.jpg",
         "questionText": "Untuk terakhir kalinya, apa yang ingin kamu lakukan?",
         "text": " ",
         "uiLayout": "decision",
@@ -356,13 +356,13 @@
     },
     "pelajar_minggu_nar_20": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg-flat.jpg",
         "text": "Semua keputusan ada di tanganmu, dan jalan yang kamu pilih akan menentukan akhir dari cerita ini.",
         "next": "pelajar_minggu_nar_21"
     },
     "pelajar_minggu_nar_21": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg-flat.jpg",
         "text": "Kamu menutup matamu.",
         "checkStress": {
             "threshold": 70, 
@@ -372,13 +372,13 @@
     },
     "pelajar_minggu_nar_21A": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg-flat.jpg",
         "text": "Kamu kembali tenggelam dalam ketidaksadaranmu yang tidak terbatas. Kamu kembali lupa akan waktu, tidak sadar atas dampak negatifnya. Pikiranmu stress, matamu terasa tidak kunjung lelah, dan kamu perlahan kehilangan dirimu.",
         "next": "pelajar_ending_bad"
     },
     "pelajar_minggu_nar_21B": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg-reflection.jpg",
         "text": "Kamu akhirnya bangun dari ketidaksadaranmu. Lingkaran stress yang menghantuimu akhirnya pecah, perasaan lega mulai meresapimu. Energimu kembali, teman-temanmu mulai kembali senang saat berbincang denganmu. Kamu berhasil terbangun.",
         "next": "pelajar_ending_good"
     },

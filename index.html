@@ -16,15 +16,25 @@
         </div>
     </div>
     
-    <div id="game-container" class="filter-monochrome">
-        
-        <div id="title-screen" class="screen">
-            <div class="title-content">
-                <h1 class="game-title">Bangunlah.</h1>
-                <p class="game-subtitle">apakah kamu sudah cukup sadar?</p>
-                <div class="menu-buttons">
-                    <button id="start-btn" class="menu-btn">Mulai Game</button>
-                </div>
+    <div id="game-container">
+
+        <div id="title-screen" class="screen title-screen-layout">
+            <h1 class="main-title typewriter-font">Bangunlah.</h1>
+            
+            <button id="start-btn" class="ui-btn custom-hud-btn start-btn-pos">Mulai.</button>
+            
+            <button id="kuesioner-title-btn" class="ui-btn custom-hud-btn kuesioner-btn-pos" onclick="window.open('https://youtu.be/dQw4w9WgXcQ?si=VIIB5NnzgCTsI_yy', '_blank')">Kuesioner</button>
+            
+            <p class="title-subtitle typewriter-font">apa kamu sudah cukup sadar?</p>
+        </div>
+
+        <div id="thankyou-screen" class="screen hide thankyou-layout">
+            <h2 class="typewriter-font" style="font-size: 3rem; margin-bottom: 10px;">Terima kasih telah bermain.</h2>
+                <p class="typewriter-font" style="font-size: 1.2rem; margin-bottom: 40px;">Umpan balikmu sangat berarti bagi pengembangan kami.</p>
+                
+                <div class="thankyou-actions">
+                    <button id="kuesioner-end-btn" class="ui-btn custom-hud-btn" onclick="window.open('https://youtu.be/dQw4w9WgXcQ?si=VIIB5NnzgCTsI_yy', '_blank')">Isi Kuesioner</button>
+                    <button id="back-to-title-btn" class="ui-btn custom-hud-btn">Kembali ke Menu</button>
             </div>
         </div>
 
@@ -109,7 +119,7 @@
                 </div>
             </div>
         </div>
-
+    </div>
             <audio id="bgm-player" loop></audio>
             <script src="engine.js"></script>
 </body>

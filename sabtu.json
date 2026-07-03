@@ -1,7 +1,7 @@
 ﻿{
     "pelajar_sabtu_nar_1": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "day": "SABTU",
         "time": "17:00",
         "text": "Hari dimana kamu membuat janji, Sabtu Sore Hari akhirnya tiba.",
@@ -76,20 +76,20 @@
     },
     "pelajar_sabtu_nar_3A": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Lagi-Lagi kamu 'terhipnotis' oleh konten media sosial. Kamu menonton dan terus menonton, scrolling demi scrolling, tanpa sadar akan waktu.",
         "next": "pelajar_sabtu_nar_3A1"
     },
     "pelajar_sabtu_nar_3A1": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "time": "17:30",
         "text": "Rasa gelisah mulai menghantuimu.",
         "next": "pelajar_sabtu_nar_3A2"
     },
     "pelajar_sabtu_nar_3A2": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "time": "18:20",
         "text": "50 menit sudah berlalu. Hanya tinggal 10 menit lagi sampai waktu berkumpul.",
         "next": "pelajar_sabtu_player_3A3"
@@ -218,7 +218,7 @@
     },
     "pelajar_sabtu_nar_5": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Kalian akhirnya masuk ke ruangan karaoke yang sudah disediakan.",
         "next": "pelajar_sabtu_nar_6"
     },
@@ -341,7 +341,7 @@
     },
     "pelajar_sabtu_nar_9B5": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": ".....",
         "next": "pelajar_sabtu_nar_9B6"
     },
@@ -377,7 +377,7 @@
     },
     "pelajar_sabtu_9t": {
         "speakerType": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Hari Sabtu telah usai. \nKeputusanmu dihari minggu besok akan menentukan bagaimana kamu menghadapi hari Senin.",
         "nextChapter": "minggu.json",
         "next": "pelajar_minggu_1"

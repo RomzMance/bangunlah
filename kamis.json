@@ -113,7 +113,7 @@
     "pelajar_kamis_1t": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Tidak terasa kelas terakhir hari ini telah selesai. Kamu merasa cukup lelah dan memutuskan untuk segera langsung pulang ke rumah untuk beristirahat.",
         "next": "pelajar_kamis_npc_2"
     },
@@ -152,14 +152,14 @@
     "pelajar_kamis_2t": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "text": "Setelah berbincang dengan Udin dalam perjalanan pulang, kamu akhirnya sampai di rumah.",
         "next": "pelajar_kamis_player_3"
     },
     "pelajar_kamis_nar_3": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "time": "20:00",
         "text": "Kamu berada di kamarmu, suasana sunyi dan membosankan. Kamu merasa sangat lelah, tapi anehnya kamu juga merasa gelisah.",
         "next": "pelajar_kamis_player_3"
@@ -281,7 +281,7 @@
     "pelajar_kamis_3t": {
         "speakerType": "",
         "speakerName": "",
-        "bg": " ",
+        "bg": "assets/images/bg.jpg",
         "time": "02:30",
         "text": "Tanpa sadar, waktu sudah melebihi pukul 12:00. \nBeberapa saat kemudian, kamu tertidur.",
         "nextChapter": "jumat.json",
