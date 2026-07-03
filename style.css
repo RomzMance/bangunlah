@@ -676,7 +676,7 @@ body {
     .bottom-ui-zone { 
         position: absolute; 
         bottom: 12px; 
-        left: 50%; 
+        left: 52%; 
         transform: translateX(-50%); 
     
         width: 65%; 
